@@ -1,0 +1,25 @@
+{
+  "name": "architecturesoftware_lab4",
+  "version": "1.0.0",
+  "description": "## Authors: - [Ervin Osmanov](https://github.com/Er4ik) - [Viktor Makoviy](https://github.com/Makov-Vik)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "cd src && node main.js",
+    "start:create": "cd src && cd services && node create.js",
+    "start:get": "cd src && cd services && node get.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Er4ik/ArchitectureSoftware_Lab4.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Er4ik/ArchitectureSoftware_Lab4/issues"
+  },
+  "homepage": "https://github.com/Er4ik/ArchitectureSoftware_Lab4#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
