@@ -24,7 +24,7 @@ const questionAsk = (questionObject, key) => {
 const addTask = (tasksDB, task) => {
     tasksDB.amountTasks += 1;
     const newDate = new Date();
-    task.status = defaultTaskValues.status;
+    task.status = defaultTaskValues.statusActive;
     task.dateCompletedTask = defaultTaskValues.dateCompletedTask
     task.createdAt = dateHandlerCreate(newDate);
     task.id = tasksDB.amountTasks;

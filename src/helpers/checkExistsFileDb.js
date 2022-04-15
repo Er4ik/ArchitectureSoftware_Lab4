@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { basicFileDB } = require('../common/basicFileDB');
 
 const checkExistsFileDb = (path) => {
     if (!fs.existsSync(path)) {
