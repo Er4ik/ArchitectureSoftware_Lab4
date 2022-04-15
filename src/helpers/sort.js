@@ -1,9 +1,11 @@
 "use strict"
 
-const sortByDate = async () => {}
+const sortByDeadline = async () => {}
+
+const sortByCreatedDate = async () => {};
 
 const sortByImportance = async () => {};
 
 const sortByDifficulties = async () => {};
 
-module.exports = { sortByDate, sortByImportance, sortByDifficulties };
+module.exports = { sortByDeadline, sortByCreatedDate, sortByImportance, sortByDifficulties };
