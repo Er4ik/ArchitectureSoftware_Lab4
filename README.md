@@ -11,10 +11,17 @@
 ## Dependencies:
 - Readline-sync
 
-## Installation
+## Installation project
 
 ```bash
 git clone https://github.com/Er4ik/ArchitectureSoftware_Lab4.git
+```
+
+## Install dependencies
+
+-  In root of project
+```bash
+npm install
 ```
 
 ## Usage
