@@ -1,6 +1,6 @@
 "use strict"
 
-const { defaultTaskValues } = require("../common/deafultTaskValues");
+const { filteredTasksByStatus } = require("./filter");
 
 const sortByDeadline = (tasks) => {
     return tasks.sort(function (current, next) {
@@ -15,11 +15,9 @@ const sortByImportance = () => {};
 const sortByDifficulties = () => {};
 
 const sortByStatusAndDeadline = (tasks) => {
-    const filteredTasksByStatus = tasks.filter((elem) => {
-        return elem.status === defaultTaskValues.status;
-    });
+    const filteredTasks = filteredTasksByStatus(tasks);
 
-    return sortByDeadline(filteredTasksByStatus);
+    return sortByDeadline(filteredTasks);
 };
 
 module.exports = { sortByDeadline, sortByCreatedDate, sortByImportance, sortByDifficulties, sortByStatusAndDeadline };

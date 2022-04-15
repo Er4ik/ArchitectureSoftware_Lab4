@@ -6,4 +6,9 @@ const questionToFillTask = {
     deadline: "Enter deadline for task (YYYY-MM-DD): ",
 };
 
-module.exports = { questionToFillTask };
+const questionToSelectIndices = {
+    question: "Select task by index to mark them done (ex. 1): ",
+    error: "Incorrect indexes! Try again: ",
+};
+
+module.exports = { questionToFillTask, questionToSelectIndices };
