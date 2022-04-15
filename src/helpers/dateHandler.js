@@ -28,13 +28,13 @@ const dateHandlerValid = (date) => {
     if (splitDate[dateValues.year] < splitNewDate[dateValues.year]) return false;
     
     else if (
-        splitDate[dateValues.year] >= splitNewDate[dateValues.year] &&
+        splitDate[dateValues.year] === splitNewDate[dateValues.year] &&
         splitDate[dateValues.month] < splitNewDate[dateValues.month]
     ) {
         return false;
     } else if (
-        splitDate[dateValues.year] >= splitNewDate[dateValues.year] &&
-        splitDate[dateValues.month] >= splitNewDate[dateValues.month] &&
+        splitDate[dateValues.year] === splitNewDate[dateValues.year] &&
+        splitDate[dateValues.month] === splitNewDate[dateValues.month] &&
         splitDate[dateValues.day] < splitNewDate[dateValues.day]
     ) {
         return false;
