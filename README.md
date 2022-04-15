@@ -8,9 +8,33 @@
 - JavaScript
 - Node.js
 
+## Dependencies:
+- Readline-sync
+
 ## Installation
+
 ```bash
 git clone https://github.com/Er4ik/ArchitectureSoftware_Lab4.git
 ```
 
 ## Usage
+
+- Create task:
+```bash
+npm run todo:create
+```
+
+- Get all tasks:
+```bash
+npm run todo:get-all
+```
+
+- Get sorted task by deadline and status:
+```bash
+npm run todo:get-sorted
+```
+
+- Mark task done:
+```bash
+npm run todo:mark-done
+```
