@@ -1,11 +1,25 @@
 "use strict"
 
-const sortByDeadline = async () => {}
+const { defaultTaskValues } = require("../common/deafultTaskValues");
 
-const sortByCreatedDate = async () => {};
+const sortByDeadline = (tasks) => {
+    return tasks.sort(function (current, next) {
+        return new Date(current.deadline) - new Date(next.deadline);
+    });
+};
 
-const sortByImportance = async () => {};
+const sortByCreatedDate = () => {};
 
-const sortByDifficulties = async () => {};
+const sortByImportance = () => {};
 
-module.exports = { sortByDeadline, sortByCreatedDate, sortByImportance, sortByDifficulties };
+const sortByDifficulties = () => {};
+
+const sortByStatusAndDeadline = (tasks) => {
+    const filteredTasksByStatus = tasks.filter((elem) => {
+        return elem.status === defaultTaskValues.status;
+    });
+
+    return sortByDeadline(filteredTasksByStatus);
+};
+
+module.exports = { sortByDeadline, sortByCreatedDate, sortByImportance, sortByDifficulties, sortByStatusAndDeadline };

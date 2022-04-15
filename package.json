@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "cd src && node main.js",
     "start:create": "cd src && cd services && node create.js",
-    "start:get": "cd src && cd services && node get.js"
+    "start:get": "cd src && cd services && node get.js",
+    "start:get-sorted": "cd src && cd services && node getSorted.js"
   },
   "repository": {
     "type": "git",

@@ -28,7 +28,7 @@ const addTask = (tasksDB, task) => {
     task.dateCompletedTask = defaultTaskValues.dateCompletedTask
     task.createdAt = dateHandlerCreate(newDate);
     task.id = tasksDB.amountTasks;
-    tasksDB.tasks.push({ [`task${tasksDB.amountTasks}`]: task });
+    tasksDB.tasks.push(task);
 
     return tasksDB;
 }
