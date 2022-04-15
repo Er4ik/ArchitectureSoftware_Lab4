@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const readlineSync = require("readline-sync");
+const { defaultTaskValues } = require("../common/deafultTaskValues");
 const { errorMsg } = require("../common/errorMsg");
 const { pathToDB } = require("../common/pathToDB");
 const { questionToFillTask } = require("../common/question");
@@ -23,6 +24,8 @@ const questionAsk = (questionObject, key) => {
 const addTask = (tasksDB, task) => {
     tasksDB.amountTasks += 1;
     const newDate = new Date();
+    task.status = defaultTaskValues.status;
+    task.dateCompletedTask = defaultTaskValues.dateCompletedTask
     task.createdAt = dateHandlerCreate(newDate);
     task.id = tasksDB.amountTasks;
     tasksDB.tasks.push({ [`task${tasksDB.amountTasks}`]: task });
