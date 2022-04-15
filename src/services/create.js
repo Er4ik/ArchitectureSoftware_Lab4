@@ -2,18 +2,46 @@
 
 const fs = require("fs");
 const readlineSync = require("readline-sync");
+const { errorMsg } = require("../common/errorMsg");
 const { pathToDB } = require("../common/pathToDB");
-const { questionToFillTask } = require("../common/question.common");
+const { questionToFillTask } = require("../common/question");
+const { dateHandlerCreate } = require("../helpers/dateHandler");
+const { createValidation } = require("../validation/createValidation");
+const tasksDB = require(pathToDB.path);
+
+const questionAsk = (questionObject, key) => {
+    const value = readlineSync.question(questionObject[key]);
+
+    if(createValidation(key, value)) {
+        return value.trim();
+    }
+
+    console.log(errorMsg[key]);
+    return;
+}
+
+const addTask = (tasksDB, task) => {
+    tasksDB.amountTasks += 1;
+    const newDate = new Date();
+    task.createdAt = dateHandlerCreate(newDate);
+    task.id = tasksDB.amountTasks;
+    tasksDB.tasks.push({ [`task${tasksDB.amountTasks}`]: task });
+
+    return tasksDB;
+}
 
 const createTask = async () => {
     try {
         const taskToDB = {};
-
-        Object.keys(questionToFillTask).forEach((key) => {
-            taskToDB[key] = readlineSync.question(questionToFillTask[key]);
+        Object.keys(questionToFillTask).forEach(async (key) => {
+            while (!taskToDB[key]) {
+                taskToDB[key] = questionAsk(questionToFillTask, key);
+            }
         });
 
-        fs.writeFile(pathToDB.path, JSON.stringify(taskToDB), (err) => {
+        const resTasks = addTask(tasksDB, taskToDB);
+
+        fs.writeFile(pathToDB.path, JSON.stringify(resTasks), (err) => {
             if (err) throw err;
             console.log("---> Task was successfully created <---");
         });
@@ -24,7 +52,7 @@ const createTask = async () => {
     }
 }
 
-if (require.main === module) {
+if(require.main === module) {
     createTask();
 }
 
