@@ -1,6 +1,10 @@
 "use strict"
 
-const sortByDate = async () => {}
+const sortByStatus = async (tasks) => {
+    return tasks.filter((elem) => {
+        return elem.status !== 'active';
+    })
+}
 
 const sortByImportance = async () => {};
 
