@@ -1,7 +1,11 @@
 "use strict";
 
-const deleteTask = () => {
-    return;
+const deleteTask = async () => {
+    try {
+        return;
+    } catch (err) {
+        throw new Error(`Error delete task --> ${err}`);
+    }
 };
 
 if (require.main === module) {
