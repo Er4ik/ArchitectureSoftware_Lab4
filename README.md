@@ -26,6 +26,11 @@ npm install
 
 ## Usage
 
+- Run Interactive mode to use all services:
+```bash
+npm run todo:main
+```
+
 - Create task:
 ```bash
 npm run todo:create
