@@ -4,7 +4,7 @@ const { pathToDB } = require("../common/pathToDB");
 const { checkExistsFileDb } = require("../helpers/checkExistsFileDb");
 const { sortByStatusAndDeadline } = require("../helpers/sort");
 
-const getSortedTask = async () => {
+const getSortedTask = () => {
     try {
         checkExistsFileDb(pathToDB.path);
 

@@ -11,4 +11,9 @@ const questionToSelectIndices = {
     error: "Incorrect indexes! Try again: ",
 };
 
-module.exports = { questionToFillTask, questionToSelectIndices };
+const questionToSelectCommand = {
+    question: "Write necessary command: ",
+    error: "Incorrect command! Try again: "
+}
+
+module.exports = { questionToFillTask, questionToSelectIndices, questionToSelectCommand };

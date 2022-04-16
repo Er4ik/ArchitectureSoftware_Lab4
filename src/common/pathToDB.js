@@ -1,5 +1,5 @@
 const pathToDB = {
-    path: '../../db/tasks.json',
-}
+    path: "../../db/tasks.json",
+};
 
 module.exports = { pathToDB };

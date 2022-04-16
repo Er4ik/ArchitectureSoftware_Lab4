@@ -63,10 +63,9 @@ const markTaskDone = async () => {
         }
 
         const resTasks = markTaskDoneHandler(index, tasks);
-
-        fs.writeFile(pathToDB.path, JSON.stringify(resTasks), (err) => {
+        
+        fs.writeFileSync(pathToDB.path, JSON.stringify(resTasks), (err) => {
             if (err) throw err;
-            console.log("---> Task was successfully marked done! <---");
         });
 
         return;   
