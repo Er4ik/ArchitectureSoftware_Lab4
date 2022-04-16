@@ -3,7 +3,7 @@
 const { pathToDB } = require("../common/pathToDB");
 const { checkExistsFileDb } = require('../helpers/checkExistsFileDb');
 
-const getTask = async () => {
+const getTask = () => {
     try {
         checkExistsFileDb(pathToDB.path);
 

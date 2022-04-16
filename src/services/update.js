@@ -1,6 +1,6 @@
 "use strict";
 
-const updateTask = async () => {
+const updateTask = () => {
     return;
 };
 

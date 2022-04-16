@@ -33,7 +33,7 @@ const addTask = (tasksDB, task) => {
     return tasksDB;
 }
 
-const createTask = async () => {
+const createTask = () => {
     try {
         const taskToDB = {};
         Object.keys(questionToFillTask).forEach(async (key) => {
@@ -44,14 +44,13 @@ const createTask = async () => {
 
         const resTasks = addTask(tasksDB, taskToDB);
 
-        fs.writeFile(pathToDB.path, JSON.stringify(resTasks), (err) => {
+        fs.writeFileSync(pathToDB.path, JSON.stringify(resTasks), (err) => {
             if (err) throw err;
-            console.log("---> Task was successfully created <---");
         });
 
         return;
     } catch (err) {
-        throw new Error(`Error create task --> ${err}`);
+        console.log(`Error create task --> ${err}`);
     }
 }
 

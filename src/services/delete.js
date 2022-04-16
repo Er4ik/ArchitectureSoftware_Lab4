@@ -1,6 +1,6 @@
 "use strict";
 
-const deleteTask = async () => {
+const deleteTask = () => {
     return;
 };
 
