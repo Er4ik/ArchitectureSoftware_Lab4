@@ -20,30 +20,20 @@ const todoTasks = () => {
 
         if (command === commands.create) {
             createTask();
-        }
-        
-        if (command === commands.update) {
+        } else if (command === commands.update) {
             updateTask();
-        }
-        
-        if (command === commands.delete) {
+        } else if (command === commands.delete) {
             deleteTask();
-        }
-        
-        if (command === commands.getAll) {
+        } else if (command === commands.getAll) {
             getTask();
-        }
-        
-        if (command === commands.getSorted) {
+        } else if (command === commands.getSorted) {
             getSortedTask();
-        }
-        
-        if (command === commands.markedDone) {
+        } else if (command === commands.markedDone) {
             markTaskDone();
-        }
-
-        if (command === commands.quit) {
+        } else if (command === commands.quit) {
             return;
+        } else {
+            console.log(questionToSelectCommand.error);
         }
     }
 };
