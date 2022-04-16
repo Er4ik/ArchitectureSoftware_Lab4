@@ -1,7 +1,11 @@
 "use strict";
 
 const updateTask = async () => {
-    return;
+    try {
+        return;
+    } catch (err) {
+        throw new Error(`Error update task --> ${err}`);
+    }
 };
 
 if (require.main === module) {

@@ -46,29 +46,33 @@ const markTaskDoneHandler = (index, tasks) => {
 }
 
 const markTaskDone = async () => {
-    checkExistsFileDb(pathToDB.path);
+    try {
+        checkExistsFileDb(pathToDB.path);
 
-    const tasks = require(pathToDB.path);
+        const tasks = require(pathToDB.path);
 
-    const filteredTasks = filteredTasksByStatus(tasks.tasks);
-    const infoTasks = checkTask(filteredTasks);
+        const filteredTasks = filteredTasksByStatus(tasks.tasks);
+        const infoTasks = checkTask(filteredTasks);
 
-    console.log(`\nAvailable tasks to mark done:\n${infoTasks.join("\n")}\n`);
+        console.log(`\nAvailable tasks to mark done:\n${infoTasks.join("\n")}\n`);
 
-    let index = selectIndices();
+        let index = selectIndices();
 
-    while (!indicesTasks(tasks.tasks).includes(index)) {
-        index = selectIndices();
+        while (!indicesTasks(tasks.tasks).includes(index)) {
+            index = selectIndices();
+        }
+
+        const resTasks = markTaskDoneHandler(index, tasks);
+
+        fs.writeFile(pathToDB.path, JSON.stringify(resTasks), (err) => {
+            if (err) throw err;
+            console.log("---> Task was successfully marked done! <---");
+        });
+
+        return;   
+    } catch (err) {
+        throw  new Error(`Error mark task done --> ${err}`)
     }
-
-    const resTasks = markTaskDoneHandler(index, tasks);
-    
-    fs.writeFile(pathToDB.path, JSON.stringify(resTasks), (err) => {
-        if (err) throw err;
-        console.log("---> Task was successfully marked done! <---");
-    });
-
-    return;
 };
 
 if (require.main === module) {

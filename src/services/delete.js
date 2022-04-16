@@ -1,7 +1,11 @@
 "use strict";
 
 const deleteTask = async () => {
-    return;
+    try {
+        return;
+    } catch (err) {
+        throw new Error(`Error delete task --> ${err}`);
+    }
 };
 
 if (require.main === module) {
