@@ -10,6 +10,7 @@ const getTask = require("./get");
 const getSortedTask = require("./getSorted");
 const markTaskDone = require("./markDone");
 const updateTask = require("./update");
+const getSortedByAlgorithm = require("./getSortedAlgorithm");
 
 const todoTasks = () => {
 
@@ -28,6 +29,8 @@ const todoTasks = () => {
             getTask();
         } else if (command === commands.getSorted) {
             getSortedTask();
+        } else if (command === commands.getSortedByAlgorithm) {
+            getSortedByAlgorithm();
         } else if (command === commands.markedDone) {
             markTaskDone();
         } else if (command === commands.quit) {

@@ -4,6 +4,7 @@ const commands = {
     delete: 'd',
     getAll: 'g',
     getSorted: 'gs',
+    getSortedByAlgorithm: 'gsba',
     markedDone: 'm', 
     quit: 'q',
 }
