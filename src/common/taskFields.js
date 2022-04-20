@@ -4,6 +4,8 @@ const taskFields = {
     difficulty: "difficulty",
     importance: "importance",
     deadline: "deadline",
+    id: "id",
+    status: "status",
 };
 
 module.exports = { taskFields };
