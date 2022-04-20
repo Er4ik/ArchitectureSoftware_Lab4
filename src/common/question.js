@@ -16,4 +16,11 @@ const questionToSelectCommand = {
     error: "Incorrect command! Try again: "
 }
 
-module.exports = { questionToFillTask, questionToSelectIndices, questionToSelectCommand };
+const questionToUpdateTask = Object.assign({
+    id: "Enter task id: ",
+    status: "Enter status task (active/passed): ",
+    }, 
+    questionToFillTask
+);
+
+module.exports = { questionToFillTask, questionToSelectIndices, questionToSelectCommand, questionToUpdateTask };
