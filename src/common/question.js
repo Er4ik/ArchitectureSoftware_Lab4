@@ -23,4 +23,8 @@ const questionToUpdateTask = Object.assign({
     questionToFillTask
 );
 
-module.exports = { questionToFillTask, questionToSelectIndices, questionToSelectCommand, questionToUpdateTask };
+const questionToDelete = {
+    id: "Write task id: ",
+}
+
+module.exports = { questionToFillTask, questionToSelectIndices, questionToSelectCommand, questionToUpdateTask, questionToDelete };
