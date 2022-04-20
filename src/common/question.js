@@ -18,7 +18,7 @@ const questionToSelectCommand = {
 
 const questionToUpdateTask = Object.assign({
     id: "Enter task id: ",
-    status: "Enter status task (active/passed): ",
+    status: "Enter status task (active/done): ",
     }, 
     questionToFillTask
 );

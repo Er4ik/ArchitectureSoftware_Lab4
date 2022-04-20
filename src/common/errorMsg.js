@@ -5,7 +5,7 @@ const errorMsg = {
     importance: "Incorrect importance, field must contain number between 1-3: ",
     deadline: "Incorrect date, it's must be later than date now or equals: ",
     id: "Incorrect task id", 
-    status: "Incorrect status, it's must be 'active' or 'passed'"
+    status: "Incorrect status, it's must be 'active' or 'done'"
 };
 
 module.exports = { errorMsg };

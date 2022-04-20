@@ -17,7 +17,7 @@ const checkId = (value) => {
 }
 
 const checkStatus = (value) => {
-    if((value === "active") || (value === "passed")) {
+    if((value === "active") || (value === "done")) {
         return true;
     }
 }
