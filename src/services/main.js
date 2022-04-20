@@ -9,7 +9,7 @@ const deleteTask = require("./delete");
 const getTask = require("./get");
 const getSortedTask = require("./getSorted");
 const markTaskDone = require("./markDone");
-const updateTask = require("./update");
+const updateTask = require("./updata");
 const getSortedByAlgorithm = require("./getSortedAlgorithm");
 
 const todoTasks = () => {
