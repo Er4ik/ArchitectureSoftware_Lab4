@@ -3,7 +3,7 @@ const fs = require("fs");
 const { questionToUpdateTask } = require("../common/question");
 const { pathToDB } = require("../common/pathToDB");
 const tasksDB = require(pathToDB.path);
-const { updataValidation } = require("../validation/updataValidation");
+const { updateValidation } = require("../validation/updateValidation");
 const { errorMsg } = require("../common/errorMsg");
 const readlineSync = require("readline-sync");
 
@@ -11,7 +11,7 @@ const readlineSync = require("readline-sync");
 const questionAsk = (questionObject, key) => {
     const value = readlineSync.question(questionObject[key]);
 
-    if(updataValidation(key, value)) {
+    if(updateValidation(key, value)) {
         if (key === 'id') {
             return Number(value);
         }

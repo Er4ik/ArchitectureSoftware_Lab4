@@ -10,7 +10,7 @@
     "todo:get-all": "cd src && cd services && node get.js",
     "todo:get-sorted": "cd src && cd services && node getSorted.js",
     "todo:get-sorted-by-algorithm": "cd src && cd services && node getSortedAlgorithm.js",
-    "todo:updata": "cd src && cd services && node updata.js",
+    "todo:update": "cd src && cd services && node update.js",
     "todo:delete": "cd src && cd services && node delete.js",
     "todo:mark-done": "cd src && cd services && node markDone.js"
   },
