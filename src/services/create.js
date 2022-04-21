@@ -48,6 +48,8 @@ const createTask = () => {
             if (err) throw err;
         });
 
+        console.log("Task successfully created!");
+
         return;
     } catch (err) {
         console.log(`Error create task --> ${err}`);

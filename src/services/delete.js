@@ -40,6 +40,9 @@ const deleteTask = async () => {
         fs.writeFileSync(pathToDB.path, JSON.stringify(tasksDB), (err) => {
             if (err) throw err;
         });
+
+        console.log("Task successfully deleted!");
+
         return;
     } catch (err) {
         throw new Error(`Error delete task --> ${err}`);

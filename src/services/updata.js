@@ -50,6 +50,8 @@ const updateTask = async () => {
             if (err) throw err;
         });
 
+        console.log("Task successfully updated!");
+
         return;
     } catch (err) {
         throw new Error(`Error update task --> ${err}`);

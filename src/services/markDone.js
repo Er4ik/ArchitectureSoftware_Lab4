@@ -6,6 +6,7 @@ const { defaultTaskValues } = require("../common/deafultTaskValues");
 const { pathToDB } = require("../common/pathToDB");
 const { questionToSelectIndices } = require("../common/question");
 const { checkExistsFileDb } = require("../helpers/checkExistsFileDb");
+const { dateHandlerCreate } = require("../helpers/dateHandler");
 const { filteredTasksByStatus } = require("../helpers/filter");
 
 const checkTask = (tasks) => {
@@ -36,6 +37,7 @@ const markTaskDoneHandler = (index, tasks) => {
     const arrTasks = tasks.tasks.map((task) => {
         if(task.id === index) {
             task.status = defaultTaskValues.statusDone;
+            task.dateCompletedTask = dateHandlerCreate(new Date);
         }
         return task;
     })
@@ -67,6 +69,8 @@ const markTaskDone = async () => {
         fs.writeFileSync(pathToDB.path, JSON.stringify(resTasks), (err) => {
             if (err) throw err;
         });
+
+        console.log("Task successfully marked done!");
 
         return;   
     } catch (err) {
