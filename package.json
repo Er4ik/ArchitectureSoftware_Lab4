@@ -11,6 +11,7 @@
     "todo:get-sorted": "cd src && cd services && node getSorted.js",
     "todo:get-sorted-by-algorithm": "cd src && cd services && node getSortedAlgorithm.js",
     "todo:updata": "cd src && cd services && node updata.js",
+    "todo:delete": "cd src && cd services && node delete.js",
     "todo:mark-done": "cd src && cd services && node markDone.js"
   },
   "repository": {

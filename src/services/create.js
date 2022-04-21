@@ -22,12 +22,12 @@ const questionAsk = (questionObject, key) => {
 }
 
 const addTask = (tasksDB, task) => {
-    tasksDB.amountTasks += 1;
+    tasksDB.historyTasks += 1;
     const newDate = new Date();
     task.status = defaultTaskValues.statusActive;
     task.dateCompletedTask = defaultTaskValues.dateCompletedTask
     task.createdAt = dateHandlerCreate(newDate);
-    task.id = tasksDB.amountTasks;
+    task.id = tasksDB.historyTasks;
     tasksDB.tasks.push(task);
 
     return tasksDB;

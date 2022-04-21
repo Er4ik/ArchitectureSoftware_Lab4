@@ -1,6 +1,6 @@
 const basicFileDB = {
     tasks: [],
-    amountTasks: 0,
+    historyTasks: 0,
 };
 
 module.exports = { basicFileDB };
