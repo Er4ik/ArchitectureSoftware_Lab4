@@ -36,6 +36,16 @@ npm run todo:main
 npm run todo:create
 ```
 
+- Update task:
+```bash
+npm run todo:updata
+```
+
+- Delete task:
+```bash
+npm run todo:delete
+```
+
 - Get all tasks:
 ```bash
 npm run todo:get-all
@@ -44,6 +54,11 @@ npm run todo:get-all
 - Get sorted task by deadline and status:
 ```bash
 npm run todo:get-sorted
+```
+
+- Get sorted task by algorithm
+```bash
+npm run todo:get-sorted-by-algorithm
 ```
 
 - Mark task done:
