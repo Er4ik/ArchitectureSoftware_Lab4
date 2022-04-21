@@ -38,7 +38,7 @@ npm run todo:create
 
 - Update task:
 ```bash
-npm run todo:updata
+npm run todo:update
 ```
 
 - Delete task:
