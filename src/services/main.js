@@ -11,6 +11,7 @@ const getSortedTask = require("./getSorted");
 const markTaskDone = require("./markDone");
 const updateTask = require("./updata");
 const getSortedByAlgorithm = require("./getSortedAlgorithm");
+const getStatistics = require("./getStatistics");
 
 const todoTasks = () => {
 
@@ -33,6 +34,8 @@ const todoTasks = () => {
             getSortedByAlgorithm();
         } else if (command === commands.markedDone) {
             markTaskDone();
+        } else if (command === commands.getStatistics) {
+            getStatistics();
         } else if (command === commands.quit) {
             return;
         } else {

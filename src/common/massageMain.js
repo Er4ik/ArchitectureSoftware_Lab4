@@ -18,6 +18,8 @@ const massageMain = {
     |--------------------------------|
     | "gs"-get sorted tasks          |
     |--------------------------------|
+    | "gst"-get statistics tasks     |
+    |--------------------------------|
     | "gsba"-get sorted by algorithm |
     |--------------------------------|
     | "m"-mark task done             |
