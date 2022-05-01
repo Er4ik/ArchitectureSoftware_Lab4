@@ -3,7 +3,7 @@ const put0ToDate = (parsedDate) => {
 };
 
 const put0ToMonth = (parsedDate) => {
-    return parsedDate.getMonth() < 10 ? 0 : "";
+    return parsedDate.getMonth() < 9 ? 0 : "";
 };
 
 const dateHandlerCreate = (date) => {

@@ -8,16 +8,10 @@ const sortByDeadline = (tasks) => {
     });
 };
 
-const sortByCreatedDate = () => {};
-
-const sortByImportance = () => {};
-
-const sortByDifficulties = () => {};
-
 const sortByStatusAndDeadline = (tasks) => {
     const filteredTasks = filteredTasksByStatus(tasks);
 
     return sortByDeadline(filteredTasks);
 };
 
-module.exports = { sortByDeadline, sortByCreatedDate, sortByImportance, sortByDifficulties, sortByStatusAndDeadline };
+module.exports = { sortByDeadline, sortByStatusAndDeadline };

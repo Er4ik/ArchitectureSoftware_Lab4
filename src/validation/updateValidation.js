@@ -2,10 +2,9 @@
 
 const { taskFields } = require("../common/taskFields");
 const { dateHandlerValid } = require("../helpers/dateHandler");
-const { pathToDB } = require("../common/pathToDB");
-const tasksDB = require(pathToDB.path);
 
-const checkId = (value) => {
+const checkId = (value, path) => {
+    const tasksDB = require(path);
     const exist = tasksDB.tasks.find((item) => {
         if (item.id === Number(value)) {
             return true
@@ -22,7 +21,7 @@ const checkStatus = (value) => {
     }
 }
 
-const updateValidation = (key, value) => {
+const updateValidation = (key, value, path) => {
     const rxDate = /\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])/;
     const availableValueForNums = [1, 2, 3];
 
@@ -38,7 +37,7 @@ const updateValidation = (key, value) => {
         case taskFields.deadline:
             return rxDate.test(value) && dateHandlerValid(value);
         case taskFields.id:
-            return checkId(value);
+            return checkId(value, path);
         case taskFields.status:
             return checkStatus(value);
         default:

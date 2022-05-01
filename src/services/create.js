@@ -8,7 +8,8 @@ const { pathToDB } = require("../common/pathToDB");
 const { questionToFillTask } = require("../common/question");
 const { dateHandlerCreate } = require("../helpers/dateHandler");
 const { createValidation } = require("../validation/createValidation");
-const tasksDB = require(pathToDB.path);
+
+const { checkExistsFileDb } = require('../helpers/checkExistsFileDb');
 
 const questionAsk = (questionObject, key) => {
     const value = readlineSync.question(questionObject[key]);
@@ -35,15 +36,18 @@ const addTask = (tasksDB, task) => {
 
 const createTask = () => {
     try {
+        checkExistsFileDb(pathToDB.path);
+
         const taskToDB = {};
         Object.keys(questionToFillTask).forEach(async (key) => {
             while (!taskToDB[key]) {
                 taskToDB[key] = questionAsk(questionToFillTask, key);
             }
         });
-
+        
+        const tasksDB = require(pathToDB.path);
         const resTasks = addTask(tasksDB, taskToDB);
-
+        
         fs.writeFileSync(pathToDB.path, JSON.stringify(resTasks), (err) => {
             if (err) throw err;
         });

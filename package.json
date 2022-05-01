@@ -4,7 +4,7 @@
   "description": "## Authors: - [Ervin Osmanov](https://github.com/Er4ik) - [Viktor Makoviy](https://github.com/Makov-Vik)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd test & jest ",
     "todo:main": "cd src && cd services && node main.js",
     "todo:create": "cd src && cd services && node create.js",
     "todo:get-all": "cd src && cd services && node get.js",
@@ -27,5 +27,8 @@
   "homepage": "https://github.com/Er4ik/ArchitectureSoftware_Lab4#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "jest": "^28.0.3"
   }
 }
