@@ -70,3 +70,5 @@ npm run todo:get-sorted-by-algorithm
 ```bash
 npm run todo:mark-done
 ```
+
+Happy hacking!🤘
