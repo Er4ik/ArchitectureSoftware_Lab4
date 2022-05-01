@@ -26,6 +26,11 @@ npm install
 
 ## Usage
 
+- Run Interactive mode to use all services by Docker:
+```bash
+npm run todo:docker-main
+```
+
 - Run Interactive mode to use all services:
 ```bash
 npm run todo:main
