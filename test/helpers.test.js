@@ -6,7 +6,7 @@ const { checkExistsFileDb } = require('../src/helpers/checkExistsFileDb');
 const { count } = require('../src/helpers/count');
 const { dateHandlerCreate, dateHandlerValid } = require('../src/helpers/dateHandler');
 
-describe.skip('check sorted: status ||(&&) deadline', () => {
+describe('check sorted: status ||(&&) deadline', () => {
   let tasks;
   beforeEach(() => {
     tasks = [{
@@ -156,7 +156,7 @@ describe.skip('check sorted: status ||(&&) deadline', () => {
   })
 })
 
-describe.skip('check sort algorithm', () => {
+describe('check sort algorithm', () => {
   test('sort algorithm', () => {
     const tasks = [{
       "name":"one",
@@ -275,7 +275,7 @@ describe.skip('check sort algorithm', () => {
   })
 })
 
-describe.skip('check exist file DB', () => {
+describe('check exist file DB', () => {
   test('check exist file DB', () => {
     const path = "./testDB/tasks.json";
     const fs = require('fs');
@@ -289,7 +289,7 @@ describe.skip('check exist file DB', () => {
   })
 })
 
-describe.skip('check count tasks', () => {
+describe('check count tasks', () => {
   test('return count active and done tasks', () => {
     const tasks = [{
       "name":"one",
@@ -355,7 +355,7 @@ describe.skip('check count tasks', () => {
   })
 })
 
-describe.skip('dataHandler', () => {
+describe('dataHandler', () => {
   test('data handler create', () => {
     const date1 = '2023.1.5';
     const res1 = dateHandlerCreate(date1);

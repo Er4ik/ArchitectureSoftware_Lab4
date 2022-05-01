@@ -2,7 +2,7 @@ const { createValidation } = require('../src/validation/createValidation');
 const { updateValidation } = require('../src/validation/updateValidation');
 const fs = require('fs');
 
-describe.skip('check validation folder', () => {
+describe('check validation folder', () => {
   test('check create validation', () => {
     const task1 = {
       name: "name",
@@ -38,7 +38,7 @@ describe.skip('check validation folder', () => {
     const db = {"tasks":[{"name":"one","description":"first task","difficulty":"3","importance":"3","deadline":"2022-07-09","status":"active","dateCompletedTask":null,"createdAt":"2022-04-30","id":1}],"historyTasks":3};
 
     fs.writeFileSync('./testDB/tasks.json', JSON.stringify(db));
-
+    
     const task1 = {
       name: "name",
       description: "description: ",
