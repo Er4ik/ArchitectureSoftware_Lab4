@@ -11,7 +11,7 @@ const readlineSync = require("readline-sync");
 const questionAsk = (questionObject, key) => {
     const value = readlineSync.question(questionObject[key]);
 
-    if(updateValidation(key, value)) {
+    if(updateValidation(key, value, pathToDB.path)) {
         if (key === 'id') {
             return Number(value);
         }
