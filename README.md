@@ -10,6 +10,7 @@
 
 ## Dependencies:
 - Readline-sync
+- Jest
 
 ## Installation project
 
